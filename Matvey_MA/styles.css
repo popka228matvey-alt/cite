@@ -1,0 +1,495 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Rubik Mono One:Regular";
+  src: url("https://static.figma.com/font/RubikMonoOne-Regular_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Rubik One:Regular";
+  src: url("https://static.figma.com/font/RubikOne-Regular_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@layer base {
+  :root {
+    color: #fff;
+    background: #070e1a;
+    font-family: "Rubik One:Regular", sans-serif;
+    font-synthesis: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-width: 320px;
+    background: #d8e2f3;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+
+main {
+  width: 100%;
+  overflow: hidden;
+}
+
+.story {
+  --section-width: 100vw;
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  aspect-ratio: 1941 / 1080;
+  overflow: hidden;
+}
+
+.story-texture {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 101%;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+}
+
+.story-label {
+  position: absolute;
+  z-index: 2;
+  top: 4.7%;
+  left: 3.5%;
+  width: 65%;
+  color: #bcbcbc;
+  font-family: "Rubik Mono One:Regular", sans-serif;
+  font-size: 10.3vw;
+  font-weight: 400;
+  line-height: 1.06;
+  opacity: 0.4;
+  white-space: nowrap;
+}
+
+.story-copy {
+  position: absolute;
+  z-index: 3;
+  top: 30%;
+  left: 6.1%;
+  width: 43.5%;
+}
+
+.story h1,
+.story h2 {
+  font-size: 4.12vw;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.story-lead {
+  margin-top: 2.3vw;
+  font-size: 2.06vw;
+  line-height: 1.13;
+}
+
+.story-detail {
+  margin-top: 1.9vw;
+  font-size: 1.65vw;
+  line-height: 1.16;
+}
+
+.story-photo {
+  position: absolute;
+  z-index: 4;
+  top: 25.5%;
+  left: 55.4%;
+  width: 43%;
+  height: 57.6%;
+  overflow: hidden;
+  border: 0.48vw solid #fff;
+  border-radius: 1.2vw;
+  background: #d8e2f3;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  transition:
+    transform 240ms ease,
+    box-shadow 240ms ease;
+}
+
+.story-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.story-photo:hover,
+.story-photo:focus-visible {
+  z-index: 5;
+  outline: none;
+  transform: translateY(-0.7vw) rotate(-0.3deg);
+  box-shadow: 0 1.4vw 3vw rgba(3, 12, 29, 0.28);
+}
+
+.story-photo:hover img,
+.story-photo:focus-visible img {
+  transform: scale(1.035);
+}
+
+.story-photo:focus-visible {
+  box-shadow:
+    0 0 0 0.22vw #8cc9ff,
+    0 1.4vw 3vw rgba(3, 12, 29, 0.3);
+}
+
+.story--intro {
+  color: #000;
+  background: #d8e2f3;
+}
+
+.story--intro .story-label {
+  top: 6.8%;
+  left: 6.55%;
+  color: #172c4f;
+  opacity: 0.68;
+}
+
+.story--intro .story-copy {
+  top: 34.8%;
+  left: 6.75%;
+  width: 61%;
+}
+
+.story--intro h1 {
+  width: 78%;
+  font-size: 3.86vw;
+  line-height: 1.08;
+}
+
+.story--intro .story-lead {
+  width: 100%;
+  margin-top: 4.1vw;
+  font-size: 2.47vw;
+}
+
+.story--intro .story-photo {
+  top: 32.3%;
+  left: 68.2%;
+  width: 27.8%;
+  height: 54.4%;
+  border-width: 0.46vw;
+  border-radius: 0.58vw;
+}
+
+.story--intro .story-photo img {
+  width: 158%;
+  max-width: none;
+  margin-left: -23%;
+}
+
+.progressive-blur {
+  position: absolute;
+  z-index: 1;
+  top: 38.4%;
+  left: -1%;
+  width: 102%;
+  height: 61.8%;
+  pointer-events: none;
+}
+
+.progressive-blur span {
+  position: absolute;
+  inset: 0;
+  background: rgba(216, 226, 243, 0.1);
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.story--mammoths .story-copy {
+  top: 30.6%;
+  left: 9%;
+  width: 42.2%;
+}
+
+.story--mammoths .story-label {
+  left: 7%;
+  opacity: 0.53;
+}
+
+.story--mammoths .story-photo {
+  top: 25.9%;
+  left: 55.5%;
+  width: 42.7%;
+  height: 57.6%;
+  border-radius: 1.4vw;
+}
+
+.story--fort .story-copy {
+  top: 29%;
+  left: 6.4%;
+  width: 44.2%;
+}
+
+.story--fort .story-photo {
+  top: 26.6%;
+  left: 53.3%;
+  width: 41.2%;
+  height: 55%;
+  border-radius: 0.45vw;
+}
+
+.story--chum .story-copy {
+  top: 29.4%;
+  left: 4.6%;
+  width: 47.6%;
+}
+
+.story--chum .story-label {
+  left: 4%;
+  color: #fff;
+}
+
+.story--chum .story-photo {
+  top: 29.2%;
+  left: 57.4%;
+  width: 39.2%;
+  height: 52.8%;
+  border-radius: 0.72vw;
+}
+
+.story--district .story-copy {
+  top: 25.2%;
+  left: 6.1%;
+  width: 47.6%;
+}
+
+.story--district .story-photo {
+  top: 17.8%;
+  left: 55.2%;
+  width: 43.5%;
+  height: 59.1%;
+}
+
+.story--railway .story-copy {
+  top: 22.1%;
+  left: 2.6%;
+  width: 47.6%;
+}
+
+.story--railway .story-label {
+  left: 2.7%;
+}
+
+.story--railway .story-photo {
+  top: 11.5%;
+  left: 52.9%;
+  width: 45%;
+  height: 60.6%;
+}
+
+.story--gas .story-copy {
+  top: 25.7%;
+  left: 3%;
+  width: 47.6%;
+}
+
+.story--gas .story-photo {
+  top: 15.7%;
+  left: 50.9%;
+  width: 45.3%;
+  height: 64.5%;
+}
+
+.story--gas .story-photo img {
+  width: 120%;
+  max-width: none;
+  margin-left: -19%;
+}
+
+.story--today {
+  aspect-ratio: 1941 / 1160;
+  background: #070e1a;
+}
+
+.story--today .story-label {
+  top: 0;
+  left: 16.9%;
+  width: 70%;
+}
+
+.story--today .story-copy {
+  top: 24.3%;
+  left: 18.1%;
+  width: 58.7%;
+}
+
+.story--today .story-copy p {
+  width: 71%;
+  margin-top: 2.3vw;
+  font-size: 2.47vw;
+  line-height: 1.15;
+}
+
+.lightbox {
+  position: fixed;
+  z-index: 50;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 5vw;
+  background: rgba(3, 9, 20, 0.9);
+  backdrop-filter: blur(14px);
+  animation: lightbox-in 180ms ease-out both;
+}
+
+.lightbox figure {
+  max-width: min(1100px, 88vw);
+  max-height: 86vh;
+}
+
+.lightbox figure img {
+  display: block;
+  max-width: 100%;
+  max-height: 78vh;
+  border: 4px solid #fff;
+  border-radius: 10px;
+  object-fit: contain;
+  box-shadow: 0 24px 90px rgba(0, 0, 0, 0.48);
+}
+
+.lightbox figcaption {
+  margin-top: 12px;
+  color: #d8e2f3;
+  font-size: 14px;
+  text-align: center;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 22px;
+  right: 22px;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  background: rgba(7, 14, 26, 0.68);
+}
+
+.lightbox-close span::before,
+.lightbox-close span::after {
+  position: absolute;
+  top: 21px;
+  left: 12px;
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  content: "";
+}
+
+.lightbox-close span::before {
+  transform: rotate(45deg);
+}
+
+.lightbox-close span::after {
+  transform: rotate(-45deg);
+}
+
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 1941px) {
+  .story-label {
+    font-size: 200px;
+  }
+
+  .story h1,
+  .story h2 {
+    font-size: 80px;
+  }
+
+  .story-lead {
+    margin-top: 45px;
+    font-size: 40px;
+  }
+
+  .story-detail {
+    margin-top: 37px;
+    font-size: 32px;
+  }
+
+  .story--intro h1 {
+    font-size: 75px;
+  }
+
+  .story--intro .story-lead,
+  .story--today .story-copy p {
+    font-size: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .story-photo,
+  .story-photo img,
+  .lightbox {
+    transition: none;
+    animation: none;
+  }
+
+ /* ==================== СНЕГ ==================== */
+.snow-container {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  background: #ffffff;
+  border-radius: 50%;
+  opacity: 0;
+  animation: snowfall linear infinite;
+  pointer-events: none;
+}
+
+@keyframes snowfall {
+  0% {
+    opacity: 0;
+    transform: translateX(0) translateY(0);
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(var(--drift)) translateY(100vh);
+  }
+}
+
+/* ==================== ПАРАЛЛАКС LABEL ==================== */
+.story-label {
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+}
